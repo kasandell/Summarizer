@@ -24,4 +24,4 @@ keyTerms: a list, containing the number of key terms requested, if they are requ
 
 Below is an easy to use json object that you only need to paste the variables into to use.
 
-"{\"text\": \"<TEXT>\", \"summaryLength\": <floatingPointPercentage>, \"keyTermsWanted\": <boolean>, \"numKeyTerms\": <numberOfKeyTerms>}"
+"{\"text\": \"TEXT\", \"summaryLength\": floatingPointPercentage, \"keyTermsWanted\": boolean, \"numKeyTerms\": numberOfKeyTermsWanted}"
