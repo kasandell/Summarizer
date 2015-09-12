@@ -17,7 +17,7 @@ def ksplit(string):
     for i in string:
         tempStr+=i
         if i == '.' or i=='?' or i=='!':
-           # print tempStr
+           
             array.append(tempStr)
             tempStr=""
     return array
@@ -109,12 +109,8 @@ class Summarizer(object):
 
     #check if the word is in the stopwords array
     def isUnimportant(self,wordToCheck):
-        #print wordToCheck
         for i in stopWordsArray:
-            #print i
-           # print word
             if i == wordToCheck:
-               # print word
                 return True
             
         return False
@@ -221,9 +217,9 @@ class Summarizer(object):
         head=Node()
         arr=input.split()
         for i in arr:
-            #print i
+            
             self.addEndNode(head, i)
-       # temp=Node()
+       
         temp=head
         while temp.link != None:
             #print temp.word
@@ -233,10 +229,6 @@ class Summarizer(object):
     #match every character in the text to the regex chars string
     def regexMatch(self,input):
         edited = ""
-       # for c in input:
-        #    for t in REGEX:
-        #        if c==t and t != '.':
-       #             edited += c
         edited=input
         return edited
     #lower case the input
@@ -277,28 +269,26 @@ class Summarizer(object):
         temp=' '
         tempSentence=""
         size = len(text)
-        #arr=text.split('.' or '!' or '?')
         arr=ksplit(text)
         for i in arr:
-            #print i
+            
             self.addSentenceNode(head, i)
         return arr
 
     #get the words in a sentence into a linked list
     def getWordsToNode(self,sent):
         tempSentence=sent.sentenceText
-        #print tempSentence
+        
         wordCount=self.getWordCount(tempSentence)
-        #print wordCount
+        
         head=Node()
         arr=tempSentence.split()
         for i in arr:
-            #print i
+            
             self.addEndNode(head, i)
         tempN=Node()
         tempN=head
         while tempN.link != None:
-          #  print tempN.word
             tempN=tempN.link
         tempWord=Node()
         tempWord=head
@@ -307,11 +297,8 @@ class Summarizer(object):
         sumTemp=self.newWords.head
         while sumTemp.link != None:
             while tempWord.link != None:
-               # print tempWord.word
-              #  print sumTemp.word
                 if tempWord.word== sumTemp.word and tempWord.word != "":
-                   # print tempWord.word
-                   # print tempWord.count
+                   
                     tempWord.count = sumTemp.count
                     totalScore+=sumTemp.count
                 tempWord=tempWord.link
@@ -407,15 +394,15 @@ class Summarizer(object):
         self.newWords=NodeList()
         copyText=self.lowerCase(text)
         copyText+=(". . ")
-        #print copyText
+        
         copyText=self.regexMatch(copyText)
-        #print copyText
+        
         wordCount=self.getWordCount(copyText)
         self.summarizeHead.head=self.split(copyText, wordCount)
         temp=Node()
         temp=self.summarizeHead.head
         while temp.link != None:
-           # print temp.word
+           
             temp=temp.link
         sumTemp=Node()
         wordTemp=Node()
@@ -448,7 +435,7 @@ class Summarizer(object):
         temp2=Node()
         temp2=self.newWords.head
         while temp2.link != None:
-            #print temp2.word
+           
             temp2=temp2.link
         sumTemp=Node()
         wordTemp=Node()
@@ -482,13 +469,13 @@ class Summarizer(object):
         temp=Sentence()
         temp=sentHead.head
         while temp.link != None:
-            #print temp.sentenceText
+            
             temp.punctuatedText=temp.sentenceText
-           # print temp.punctuatedText
+           
             temp.sentenceText=self.lowerCase(temp.sentenceText)
             temp.sentenceText=self.regexMatch(temp.sentenceText)
             temp=temp.link
-       # print temp.sentenceText
+       
         temp.punctuatedText=temp.sentenceText
         temp.sentenceText=self.lowerCase(temp.sentenceText)
         temp.sentenceText=self.regexMatch(temp.sentenceText)
@@ -529,7 +516,7 @@ def apply(input):
         kt=[]
         while temp.link !=None and count < numberOfKeyTerms:
             kt.append(temp.word)
-           # kt+=','
+          
             count+=1
             temp=temp.link
         json_data['keyTerms']=kt
@@ -542,7 +529,7 @@ def apply(input):
     
     while temp.link != None and count2<numSentences:
         summary.append(temp.punctuatedText)
-        #summary += '\n'
+       
         count2+=1
         temp=temp.link
     json_data['summary']=summary
