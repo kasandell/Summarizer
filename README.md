@@ -1,5 +1,5 @@
 # Summarizer
-A summarization algorithm written in python. Takes in a json object containing the data and summarization parameters and returns a summary and the key terms. This is the code I wrote for this algorithm on aglorithmia: https://algorithmia.com/algorithms/kasandell/Summarizer.
+A summarization algorithm written in python. Takes in a json object containing the data and summarization parameters and returns a summary and the key terms. This algorithm is on aglorithmia, and was selected as one of three algorithms of the month for September of 2015: https://algorithmia.com/algorithms/kasandell/Summarizer.
 This algorithm is the summarization algorithm from my app: https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=962626932 translated into python.
 
 Summarizer is an algorithm that takes in data and json format and returns a summary and key terms from the text. The json object the algorithm takes needs 4 fields:
